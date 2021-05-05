@@ -51,13 +51,13 @@
                     <a class="nav-link"  href="index.html">Accueil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="carte.html">Carte</a>
+                    <a class="nav-link active" aria-current="page" href="#">Carte</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Liste des Centres</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#">À Propos</a>
+                      <a class="nav-link" href="about.html">À Propos</a>
                   </li>
                 </ul>
               </div>
@@ -87,8 +87,12 @@
                 }
             })
             $.when(counties).done(function() {
-                var kyCounties = L.geoJSON(counties.responseJSON).addTo(map);
-        });
+                var kyCounties = L.geoJSON(counties.responseJSON, {
+                    onEachFeature: function (feature, layer) {
+                      layer.bindPopup('<h5>'+feature.properties.c_nom+'</h5>Centre ouvert depuis: '+feature.properties.c_date_ouverture+'<p>adresse: '+feature.properties.c_adr_voie+'<br>'+feature.properties.c_com_cp+' '+feature.properties.c_com_nom+'<br>'+feature.properties.c_rdv_tel+'</p><p><a href="'+feature.properties.c_rdv_site_web+'" target="_blank">Prise de RDV par internet</a></p><table class="table"><tbody><tr><td>Lundi</td><td>'+feature.properties.c_rdv_lundi+'</td></tr><tr><td>Mardi</td><td>'+feature.properties.c_rdv_mardi+'</td></tr><tr><td>Mercredi</td><td>'+feature.properties.c_rdv_mercredi+'</td></tr><tr><td>Jeudi</td><td>'+feature.properties.c_rdv_jeudi+'</td></tr><tr><td>Vendredi</td><td>'+feature.properties.c_rdv_vendredi+'</td></tr><tr><td>Samedi</td><td>'+feature.properties.c_rdv_samedi+'</td></tr><tr><td>Dimanche</td><td>'+feature.properties.c_rdv_dimanche+'</td></tr></tbody></table>',{maxHeight : 300});
+                                        }
+                                      }).addTo(map);
+                            });
 
         map.locate({setView: true, maxZoom:11});
                     

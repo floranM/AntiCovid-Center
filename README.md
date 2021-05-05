@@ -4,12 +4,18 @@ Carte fournissant tous les centres de vaccination en France.
 Carte visible sur: [https://floranm.github.io/AntiCovid-Center/](https://floranm.github.io/AntiCovid-Center/)
 
 ## Ressources utilisées:
-- Les données sur les centres de vaccination sont issues de:
+- Les données sur les centres de vaccination sont issues de [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/lieux-de-vaccination-contre-la-covid-19/)
 
 - la mise en page est réaliser grace au framework CSS bootstrap
 
 - La carte est gérée grace au plugin JS leaflet
 
+## Reste à faire
+- amélioration de la carte ( filtres, ...)
+
+- Affichage des centres en liste
+
+- Ajout d'un système de stats pour les visites.
 ## Données personnelles
 Nous sauvegardons aucune de vos données personnelles. Le site AntiCovid-Center n'utilise aucune base de données, par conséquent nous n'enregistront aucune données sur nos utilisateurs.
 
