@@ -10,6 +10,8 @@ Carte visible sur: [https://floranm.github.io/AntiCovid-Center/](https://floranm
 
 - La carte est gérée grace au plugin JS leaflet
 
+## Mise a Jours des données:
+Les données sont mise à jours sur le site toutes les heures. Cependant l'ajout/modif/suppr de données sont moins fréquentes et dépendent des mises à jours sur la base de donnée data.gouv.fr
 ## Reste à faire
 - amélioration de la carte ( filtres, ...)
 

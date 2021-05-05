@@ -11,7 +11,7 @@ jobs:
       uses: TheLastProject/keep-remote-file-locally-up-to-date-action@v1
       with:
         url: https://www.data.gouv.fr/fr/datasets/r/d0566522-604d-4af6-be44-a26eefa01756
-        file_in_repo: data/centre-vaccination.json
+        file_in_repo: data/centres-vaccination.json
 on:
   schedule:
     - cron: '0 * * * *'
