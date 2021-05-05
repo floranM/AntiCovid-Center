@@ -1,0 +1,17 @@
+jobs:
+  keep_file_updated:
+    runs-on: ubuntu-latest
+    name: Keep file updated
+    steps:
+    - name: Checkout repo
+      id: checkout
+      uses: actions/checkout@v2
+    - name: Update file
+      id: update_file
+      uses: TheLastProject/keep-remote-file-locally-up-to-date-action@v1
+      with:
+        url: https://www.data.gouv.fr/fr/datasets/r/d0566522-604d-4af6-be44-a26eefa01756
+        file_in_repo: data/centre-vaccination.json
+on:
+  schedule:
+    - cron: '0 * * * *'
